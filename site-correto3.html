@@ -1,0 +1,10 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UNIKO Personalizados Floripa</title></head><body><script>fetch('site.html?v=hero3').then(r=>r.text()).then(html=>{html=html.replaceAll('logo-uniko-oficial.svg','logofinal%20(1).png');html=html.replace('<div class="circle"><div><img src="logofinal%20(1).png" alt="UNIKO Personalizados"></div></div>','<div class="circle hero-photo"><div><img src="camiseta-roxa-hero.jpg" alt="Camisetas personalizadas UNIKO"></div></div>');html=html.replace('</head>',`<style>
+.logo{background:transparent!important;padding:0!important;border-radius:0!important;overflow:visible!important}
+.logo img{width:270px!important;height:74px!important;object-fit:contain!important;transform:none!important;transform-origin:left center!important}
+.hero-photo>div{padding:0!important;overflow:hidden!important;background:#fff!important}
+.hero-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 42%!important;transform:none!important}
+.flogo{padding:12px!important;overflow:hidden!important}
+.flogo img{width:100%!important;transform:scale(1.18)!important}
+@media(max-width:800px){.logo img{width:220px!important;height:64px!important}}
+@media(max-width:480px){.logo img{width:180px!important;height:56px!important}.hero-photo>div{padding:0!important}}
+</style></head>`);document.open();document.write(html);document.close();});</script></body></html>
