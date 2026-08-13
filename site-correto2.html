@@ -1,0 +1,9 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UNIKO Personalizados Floripa</title></head><body><script>fetch('site.html?v=logo2').then(r=>r.text()).then(html=>{html=html.replaceAll('logo-uniko-oficial.svg','logofinal%20(1).png');html=html.replace('</head>',`<style>
+.logo{background:transparent!important;padding:0!important;border-radius:0!important;overflow:visible!important}
+.logo img{width:190px!important;height:62px!important;object-fit:contain!important;transform:scale(1.18)!important;transform-origin:left center!important}
+.circle>div{padding:10px!important;overflow:hidden!important}
+.circle img{width:100%!important;transform:scale(1.18)!important}
+.flogo{padding:12px!important;overflow:hidden!important}
+.flogo img{width:100%!important;transform:scale(1.18)!important}
+@media(max-width:480px){.logo img{width:150px!important;height:52px!important}.circle>div{padding:8px!important}}
+</style></head>`);document.open();document.write(html);document.close();});</script></body></html>
