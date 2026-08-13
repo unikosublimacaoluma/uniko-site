@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UNIKO Personalizados Floripa — uniformes, camisetas e presentes personalizados em Florianópolis. Peça seu orçamento.">
+  <meta name="theme-color" content="#6328a8">
+  <title>UNIKO Personalizados Floripa</title>
+  <style>
+    :root{--purple:#6427a8;--purple2:#8533b8;--orange:#ff6b0a;--ink:#251b31;--muted:#6f6878;--bg:#faf8fc;--card:#fff;--line:#ece6f2;--green:#25d366;--shadow:0 18px 50px rgba(57,32,78,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+    .top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{width:170px;max-height:58px;object-fit:contain;object-position:left center}.menu{display:flex;align-items:center;gap:24px;font-weight:700;font-size:14px}.menu a:hover{color:var(--purple)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:14px;padding:14px 20px;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--purple),var(--orange));color:#fff;box-shadow:0 12px 30px rgba(112,44,168,.24)}.btn-outline{border:1px solid #ded3e8;background:#fff;color:var(--purple)}.btn-whatsapp{background:var(--green);color:#fff}.btn.disabled{opacity:.55;pointer-events:none}
+    .hero{padding:86px 0 72px;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,10,.16),rgba(100,39,168,.07) 54%,transparent 72%);right:-120px;top:-120px;pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--purple);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:12px;margin-bottom:18px}.eyebrow:before{content:"";width:28px;height:3px;border-radius:5px;background:var(--orange)}h1{font-size:clamp(42px,6vw,74px);line-height:1.02;letter-spacing:-.045em;margin:0 0 22px;max-width:760px}.gradient{background:linear-gradient(90deg,var(--purple),#b83289,var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:19px;color:var(--muted);max-width:650px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.micro{font-size:13px;color:var(--muted);margin-top:14px}.hero-card{background:linear-gradient(145deg,#281536,#6f259d 60%,#ff6b0a);color:#fff;border-radius:30px;min-height:430px;padding:38px;box-shadow:0 30px 80px rgba(65,31,91,.22);display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}.hero-card:before{content:"UNIKO";position:absolute;top:28px;left:30px;font-weight:950;font-size:70px;letter-spacing:.04em;opacity:.08}.hero-card .tag{display:inline-block;width:max-content;padding:8px 11px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:12px;font-weight:800;margin-bottom:16px}.hero-card h2{font-size:34px;line-height:1.08;margin:0 0 13px}.hero-card p{margin:0;color:rgba(255,255,255,.82)}
+    .trust{padding:0 0 70px}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.trust-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 24px rgba(70,40,90,.05)}.trust-icon{width:38px;height:38px;flex:0 0 38px;border-radius:12px;background:#f2eafa;color:var(--purple);display:grid;place-items:center;font-weight:900}.trust-item strong{display:block;margin-bottom:3px}.trust-item span{font-size:14px;color:var(--muted)}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}.section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.035em;margin:0}.section-head p{max-width:550px;margin:0;color:var(--muted)}
+    .services{background:#fff}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#dbcde7}.card-num{font-size:12px;color:var(--orange);font-weight:950;letter-spacing:.1em}.card h3{font-size:22px;margin:13px 0 8px}.card p{margin:0;color:var(--muted);font-size:15px}
+    .business{background:linear-gradient(180deg,#fbf8fd,#f5eff9)}.business-box{display:grid;grid-template-columns:1fr 1fr;gap:28px;background:#271632;color:#fff;border-radius:30px;padding:44px;overflow:hidden;position:relative}.business-box:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-130px;bottom:-150px;background:linear-gradient(135deg,var(--purple),var(--orange));opacity:.55}.business-box>*{position:relative;z-index:2}.business-box h2{font-size:44px;line-height:1.06;letter-spacing:-.035em;margin:0 0 18px}.business-box p{color:#d9cde1;margin:0 0 24px}.bullets{display:grid;gap:12px;margin:0;padding:0;list-style:none}.bullets li{display:flex;gap:10px;align-items:flex-start}.bullets li:before{content:"✓";color:#ff8a3d;font-weight:900}.business-side{align-self:end;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:24px}.business-side strong{font-size:26px;display:block;margin-bottom:7px}.business-side span{color:#d9cde1}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 8px 25px rgba(70,40,90,.05)}.stars{color:#f59a23;letter-spacing:2px;margin-bottom:13px}.review p{font-size:17px;margin:0 0 18px}.review strong{font-size:14px}.review span{display:block;color:var(--muted);font-size:13px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{background:#fff;border-radius:22px;padding:26px;border:1px solid var(--line)}.step b{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--purple),var(--orange));color:#fff;display:grid;place-items:center;margin-bottom:18px}.step h3{margin:0 0 7px}.step p{margin:0;color:var(--muted)}
+    .cta{padding:30px 0 84px}.cta-box{background:linear-gradient(110deg,var(--purple),#b13088 52%,var(--orange));border-radius:30px;color:#fff;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px}.cta-box h2{font-size:40px;line-height:1.05;margin:0 0 10px}.cta-box p{margin:0;color:rgba(255,255,255,.85)}.cta .btn{background:#fff;color:var(--purple);white-space:nowrap}
+    footer{background:#21162a;color:#fff;padding:42px 0}.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:25px}.footer-logo img{width:150px;max-height:55px;object-fit:contain;filter:brightness(0) invert(1)}.footer-links{display:flex;gap:18px;flex-wrap:wrap;color:#d7ccde;font-size:14px}.copy{color:#9f90a9;font-size:13px;margin-top:20px}
+    @media(max-width:900px){.menu a:not(.nav-cta){display:none}.hero{padding-top:55px}.hero-grid,.business-box{grid-template-columns:1fr}.hero-card{min-height:340px}.cards,.reviews-grid,.steps{grid-template-columns:1fr 1fr}.trust-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:13px}.cta-box{display:block}.cta-box .btn{margin-top:24px}}
+    @media(max-width:620px){.wrap{width:min(100% - 26px,1120px)}.nav{height:70px}.brand img{width:145px}.hero{padding:42px 0 50px}.hero-grid{gap:30px}h1{font-size:45px}.lead{font-size:17px}.hero-card{padding:28px;min-height:300px}.hero-card h2{font-size:28px}.cards,.reviews-grid,.steps{grid-template-columns:1fr}.business-box{padding:30px 24px}.business-box h2{font-size:34px}.cta-box{padding:34px 26px}.cta-box h2{font-size:33px}.footer-grid{display:block}.footer-links{margin-top:22px}}
+  </style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="UNIKO Personalizados"><img src="logo-uniko.png" alt="UNIKO Personalizados"></a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#servicos">Produtos</a><a href="#empresas">Empresas</a><a href="#avaliacoes">Avaliações</a>
+      <a class="btn btn-primary nav-cta js-whatsapp disabled" href="#contato">Orçamento</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Personalizados em Florianópolis</div>
+      <h1>Sua ideia.<br><span class="gradient">Sua marca.</span><br>Do seu jeito.</h1>
+      <p class="lead">Uniformes, camisetas, presentes e produtos personalizados com atendimento próximo e acabamento profissional.</p>
+      <div class="hero-actions">
+        <a class="btn btn-whatsapp js-whatsapp disabled" href="#contato">Pedir orçamento</a>
+        <a class="btn btn-outline" href="#servicos">Ver o que fazemos</a>
+      </div>
+      <div class="micro">Consulte prazo de produção e retirada pelo WhatsApp.</div>
+    </div>
+    <div class="hero-card">
+      <span class="tag">UNIKO PERSONALIZADOS</span>
+      <h2>Transformamos ideias em produtos que têm identidade.</h2>
+      <p>Para empresas, equipes, eventos, presentes e projetos especiais.</p>
+    </div>
+  </div>
+</section>
+<div class="trust"><div class="wrap trust-grid">
+  <div class="trust-item"><div class="trust-icon">01</div><div><strong>Atendimento direto</strong><span>Você fala conosco e recebe orientação para escolher a melhor solução.</span></div></div>
+  <div class="trust-item"><div class="trust-icon">02</div><div><strong>Personalização sob medida</strong><span>Produção pensada para sua marca, ocasião ou necessidade.</span></div></div>
+  <div class="trust-item"><div class="trust-icon">03</div><div><strong>Produção em Floripa</strong><span>Atendimento local em Florianópolis e orçamento pelo WhatsApp.</span></div></div>
+</div></div>
+<section class="services" id="servicos"><div class="wrap">
+  <div class="section-head"><h2>O que você pode<br>personalizar na UNIKO</h2><p>Do presente individual ao uniforme de uma equipe. Fale conosco para consultar modelos, quantidades e prazos.</p></div>
+  <div class="cards">
+    <article class="card"><div class="card-num">01</div><h3>Uniformes para empresas</h3><p>Camisetas, polos e outras peças personalizadas para fortalecer a identidade da sua equipe.</p></article>
+    <article class="card"><div class="card-num">02</div><h3>Camisetas personalizadas</h3><p>Para marcas, eventos, equipes, presentes e projetos especiais em diferentes estilos.</p></article>
+    <article class="card"><div class="card-num">03</div><h3>Canecas e copos</h3><p>Personalizados para presentear, divulgar sua marca ou criar lembranças únicas.</p></article>
+    <article class="card"><div class="card-num">04</div><h3>Presentes personalizados</h3><p>Kits e produtos criados para aniversários, datas especiais, equipes e clientes.</p></article>
+    <article class="card"><div class="card-num">05</div><h3>Bonés e acessórios</h3><p>Opções para empresas, eventos, equipes e uso promocional com identidade própria.</p></article>
+    <article class="card"><div class="card-num">06</div><h3>Placas e sinalização</h3><p>Soluções personalizadas para comunicação visual, identificação e sinalização de empresas.</p></article>
+  </div>
+</div></section>
+<section class="business" id="empresas"><div class="wrap"><div class="business-box">
+  <div><div class="eyebrow" style="color:#ff9a57">UNIKO PARA EMPRESAS</div><h2>Uniforme também é identidade.</h2><p>Uma equipe bem apresentada reforça profissionalismo e torna sua marca mais reconhecível no dia a dia.</p><ul class="bullets"><li>Personalização com a identidade da empresa</li><li>Opções para atendimento, serviços e equipes externas</li><li>Orçamento conforme modelo e quantidade</li></ul></div>
+  <div class="business-side"><strong>Sua equipe. Sua marca.</strong><span>Envie sua ideia ou seu logo e consulte as opções disponíveis para sua empresa.</span><br><br><a class="btn btn-whatsapp js-whatsapp disabled" href="#contato">Solicitar orçamento</a></div>
+</div></div></section>
+<section id="avaliacoes"><div class="wrap">
+  <div class="section-head"><h2>Quem compra,<br>recomenda.</h2><p>Algumas avaliações de clientes da UNIKO.</p></div>
+  <div class="reviews-grid">
+    <article class="review"><div class="stars">★★★★★</div><p>“Atendimento Excelente, Rápido e Material de boa qualidade.”</p><strong>Mariane C. Cunha</strong><span>Cliente UNIKO</span></article>
+    <article class="review"><div class="stars">★★★★★</div><p>“Adorei as camisas, tecido confortável e ficaram lindas demais.”</p><strong>Aline Alves</strong><span>Cliente UNIKO</span></article>
+    <article class="review"><div class="stars">★★★★★</div><p>“Atendimento excelente, pessoas gentis e produtos muito lindos.”</p><strong>David Ricardo Borba</strong><span>Cliente UNIKO</span></article>
+  </div>
+</div></section>
+<section style="background:#fff"><div class="wrap">
+  <div class="section-head"><h2>Como pedir</h2><p>Um processo simples para você sair da ideia e chegar ao produto personalizado.</p></div>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Conte o que precisa</h3><p>Envie produto, quantidade, ideia e, se tiver, seu logo ou referência.</p></div>
+    <div class="step"><b>2</b><h3>Receba o orçamento</h3><p>Confirmamos opções, valores e prazo de produção antes de começar.</p></div>
+    <div class="step"><b>3</b><h3>Aprove e personalize</h3><p>Com tudo definido, seguimos com a produção do seu pedido.</p></div>
+  </div>
+</div></section>
+<section class="cta" id="contato"><div class="wrap"><div class="cta-box"><div><h2>Tem uma ideia?<br>Fale com a UNIKO.</h2><p>Envie sua necessidade e consulte modelos, valores e prazo de produção.</p></div><a class="btn js-whatsapp disabled" href="#contato">Chamar no WhatsApp</a></div></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-grid"><a class="footer-logo" href="#inicio"><img src="logo-uniko.png" alt="UNIKO Personalizados"></a><div class="footer-links"><a href="https://www.instagram.com/unikopersonalizadosfloripa/" target="_blank" rel="noopener">Instagram @unikopersonalizadosfloripa</a><span>Florianópolis • SC</span><a href="#inicio">Voltar ao topo ↑</a></div></div><div class="copy">© 2026 UNIKO Personalizados Floripa. Crie do seu jeito.</div></div></footer>
+<script>
+  // O número comercial será inserido antes da publicação final.
+  const WHATSAPP_NUMBER = "";
+  const message = encodeURIComponent("Olá! Vim pelo site da UNIKO e gostaria de pedir um orçamento.");
+  document.querySelectorAll('.js-whatsapp').forEach(link => {
+    if (WHATSAPP_NUMBER) {
+      link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      link.classList.remove('disabled');
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
+  });
+</script>
+</body>
+</html>
