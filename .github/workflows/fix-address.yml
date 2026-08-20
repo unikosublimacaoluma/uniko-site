@@ -1,0 +1,43 @@
+name: Fix UNIKO structured data address
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-address:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Correct structured data address
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          old = '"streetAddress": "R. Divino Espírito Santo, Santo 264 - Rio Tavares"'
+          new = '"streetAddress": "Rua Divino Espírito Santo 264"'
+          if old not in s:
+              raise SystemExit('Expected old address was not found; no change made.')
+          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Commit correction
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Corrigir endereço estruturado da UNIKO"
+            git push
+          fi
