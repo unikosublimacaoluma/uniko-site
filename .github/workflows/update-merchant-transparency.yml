@@ -1,0 +1,45 @@
+name: Update UNIKO merchant transparency
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update production deadline and legal links
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+            'Consulte prazo de produção e retirada pelo WhatsApp.<br><strong>Formas de pagamento: Pix • Débito • Crédito em até 12x</strong>': 'Prazo de produção: até 5 dias úteis após pagamento e aprovação da arte.<br><strong>Formas de pagamento: Pix • Débito • Crédito em até 12x</strong>',
+            '<strong>Atendimento em Florianópolis</strong><p>Consulte prazo de produção e retirada.</p>': '<strong>Atendimento em Florianópolis</strong><p>Produção em até 5 dias úteis. Consulte retirada e envio.</p>',
+            '<footer><div class="wrap foot"><div>UNIKO Personalizados • Florianópolis, SC</div><div class="footlinks"><a href="https://www.instagram.com/unikopersonalizadosfloripa/" target="_blank" rel="noopener">Instagram @unikopersonalizadosfloripa</a><a class="wa" href="#">WhatsApp</a></div></div></footer>': '<footer><div class="wrap foot"><div>UNIKO Personalizados • Florianópolis, SC</div><div class="footlinks"><a href="/politica-de-entrega.html">Entrega</a><a href="/trocas-devolucoes.html">Trocas e devoluções</a><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="https://www.instagram.com/unikopersonalizadosfloripa/" target="_blank" rel="noopener">Instagram</a><a class="wa" href="#">WhatsApp</a></div></div></footer>'
+          }
+          for old,new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f'Expected text not found: {old[:80]}')
+              s = s.replace(old,new,1)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Adicionar prazo e políticas no site da UNIKO"
+            git push
+          fi
