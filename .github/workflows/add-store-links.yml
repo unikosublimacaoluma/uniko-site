@@ -1,0 +1,60 @@
+name: Add UNIKO online store links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-store-links.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add clear links to the online store
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          store = 'https://loja.unikopersonalizadosfloripa.com.br/'
+
+          replacements = {
+            '<meta name="description" content="Camisetas, uniformes, canecas, azulejos e presentes personalizados em Florianópolis. Enviamos para todo Brasil. Peça seu orçamento pelo WhatsApp.">':
+              '<meta name="description" content="Camisetas, uniformes, canecas, azulejos e presentes personalizados em Florianópolis. Compre online ou peça seu orçamento pelo WhatsApp. Enviamos para todo Brasil.">',
+
+            '<nav class="links" aria-label="Navegação principal"><a href="#produtos">Produtos</a><a href="#empresas">Empresas</a><a href="#como">Como pedir</a><a class="btn orange wa" href="#">Orçamento</a></nav>':
+              f'<nav class="links" aria-label="Navegação principal"><a href="#produtos">Produtos</a><a href="#empresas">Empresas</a><a href="#como">Como pedir</a><a class="wa" href="#">Orçamento</a><a class="btn orange" href="{store}" target="_blank" rel="noopener">Loja Online</a></nav>',
+
+            '<div class="actions"><a class="btn orange wa" href="#">Pedir orçamento</a><a class="btn white" href="#produtos">Ver produtos</a></div>':
+              f'<div class="actions"><a class="btn orange" href="{store}" target="_blank" rel="noopener">Comprar online</a><a class="btn white wa" href="#">Pedir orçamento</a></div>',
+
+            '<footer><div class="wrap foot"><div>UNIKO Personalizados • Florianópolis, SC</div><div class="footlinks"><a href="/politica-de-entrega.html">Entrega</a><a href="/trocas-devolucoes.html">Trocas e devoluções</a><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="https://www.instagram.com/unikopersonalizadosfloripa/" target="_blank" rel="noopener">Instagram</a><a class="wa" href="#">WhatsApp</a></div></div></footer>':
+              f'<footer><div class="wrap foot"><div>UNIKO Personalizados • Florianópolis, SC</div><div class="footlinks"><a href="{store}" target="_blank" rel="noopener">Loja Online</a><a href="/politica-de-entrega.html">Entrega</a><a href="/trocas-devolucoes.html">Trocas e devoluções</a><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="https://www.instagram.com/unikopersonalizadosfloripa/" target="_blank" rel="noopener">Instagram</a><a class="wa" href="#">WhatsApp</a></div></div></footer>'
+          }
+
+          for old, new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f'Expected text not found: {old[:120]}')
+              s = s.replace(old, new, 1)
+
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Adicionar acesso claro à Loja Online"
+            git push
+          fi
