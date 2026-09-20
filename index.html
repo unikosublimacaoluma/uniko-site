@@ -115,11 +115,46 @@
     footer{background:#151217;color:#c9c0cc;padding:30px 0;font-size:13px}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}.footlinks{display:flex;gap:20px;flex-wrap:wrap}.foot a:hover{color:#fff}
     @media(max-width:850px){.links a:not(.btn){display:none}.hero .wrap,.business .wrap,.final .wrap{grid-template-columns:1fr}.hero .wrap{padding:56px 0}.hero h1{font-size:54px}.hero-circle{width:300px}.grid3{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.products{padding-bottom:114px}.final{text-align:center}.row{align-items:flex-start}.logo{margin-left:-115px}.logo img{width:300px;height:80px}.photo-circle{width:205px;height:205px}}
     @media(max-width:500px){html,body{overflow-x:hidden}.wrap{width:min(100% - 28px,1160px)}.strip{font-size:10px}.nav{height:72px}.nav .wrap{width:100%;padding:0 12px;gap:8px}.logo{margin-left:-24px;flex:0 0 200px;min-width:0}.logo img{width:200px;height:60px;max-width:200px;object-fit:contain}.links{gap:0;flex:0 0 auto}.links .btn{min-height:40px;padding:0 10px;font-size:11px;white-space:nowrap}.hero h1{font-size:46px}.hero p{font-size:16px}.hero-circle{width:min(270px,calc(100vw - 44px));justify-self:center;margin-left:auto;margin-right:auto}.title h2{font-size:34px}.grid4{grid-template-columns:1fr 1fr;gap:26px 14px}.whybox{padding:32px 20px}.business{padding-top:118px}.row{font-size:14px}.photo-circle{width:180px;height:180px}.steps{padding-bottom:104px}.reviews{padding:88px 0 78px}.final{background:linear-gradient(150deg,var(--o) 0 34%,var(--p) 34%)}.final .wrap>div{min-width:0;max-width:100%}.final .wrap>div:last-child{width:100%;text-align:center}.flogo{width:min(220px,calc(100vw - 60px));height:auto;aspect-ratio:1;justify-self:center;margin-left:auto;margin-right:auto}.final h2{font-size:clamp(32px,10.3vw,38px);line-height:.95;letter-spacing:-.025em;max-width:100%;margin-left:auto;margin-right:auto}.final p{font-size:16px;max-width:100%;padding:0 4px}.foot{display:block;text-align:center}.footlinks{justify-content:center;margin-top:12px}}
+  
+    /* Faixa especial de Outubro Rosa: independente do restante do site */
+    .uniko-outubro-chamada{
+      background:linear-gradient(105deg,#831447,#bf246d 58%,#e46b9f);
+      color:#fff;padding:20px 0;
+    }
+    .uniko-outubro-chamada .wrap{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:18px;flex-wrap:wrap;
+    }
+    .uniko-outubro-chamada strong{display:block;font-size:clamp(20px,2.5vw,27px);line-height:1.2}
+    .uniko-outubro-chamada p{margin:6px 0 0;color:#fff2f8;font-size:15px;line-height:1.45}
+    .uniko-outubro-botao{
+      display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+      min-height:47px;padding:11px 20px;background:#fff;color:#831447;
+      border-radius:999px;font-weight:900;text-align:center;
+    }
+    .uniko-outubro-botao:hover,.uniko-outubro-botao:focus-visible{
+      background:#ffe5f1;outline-offset:3px;
+    }
+    @media(max-width:600px){
+      .uniko-outubro-chamada{padding:18px 0}
+      .uniko-outubro-botao{width:100%}
+    }
   </style>
 </head>
 <body>
   <div class="strip">PERSONALIZADOS EM FLORIANÓPOLIS • ENVIOS PARA TODO BRASIL</div>
   <header class="nav"><div class="wrap"><a class="logo" href="#inicio" aria-label="UNIKO Personalizados"><img src="logofinal%20(1).png" alt="UNIKO Personalizados"></a><nav class="links" aria-label="Navegação principal"><a href="#produtos">Produtos</a><a href="#empresas">Empresas</a><a href="#como">Como pedir</a><a class="wa" href="#">Orçamento</a><a class="btn orange" href="https://loja.unikopersonalizadosfloripa.com.br/" target="_blank" rel="noopener">Loja Online</a></nav></div></header>
+
+  <!-- Acesso à campanha Outubro Rosa: não altera a página da campanha -->
+  <aside class="uniko-outubro-chamada" aria-label="Campanha Outubro Rosa">
+    <div class="wrap">
+      <div>
+        <strong>🎀 Outubro Rosa: uma coleção especial para você</strong>
+        <p>Conheça nossas estampas e produtos personalizados. Consulte também outros modelos!</p>
+      </div>
+      <a class="uniko-outubro-botao" href="/outubro-rosa.html">💗 Ver coleção Outubro Rosa →</a>
+    </div>
+  </aside>
   <main id="inicio">
     <section class="hero"><div class="wrap"><div><div class="eyebrow">UNIKO PERSONALIZADOS</div><h1>Sua ideia.<br><b>Sua marca.</b><br><em>Do seu jeito.</em></h1><p>Uniformes, camisetas, canecas, azulejos e presentes personalizados para empresas, eventos e momentos especiais.</p><div class="actions"><a class="btn orange" href="https://loja.unikopersonalizadosfloripa.com.br/" target="_blank" rel="noopener">Comprar online</a><a class="btn white wa" href="#">Pedir orçamento</a></div><p class="note">Prazo de produção: até 5 dias úteis após pagamento e aprovação da arte.<br><strong>Formas de pagamento: Pix • Débito • Crédito em até 12x</strong></p></div><div class="hero-circle"><div class="hero-slider" aria-label="Exemplos de produtos personalizados"><img class="hero-slide active" src="slide-camiseta-roxa.webp" alt="Camiseta personalizada"><img class="hero-slide" src="slide-caneca-azulejo.webp" alt="Caneca e azulejo personalizados"><img class="hero-slide" src="slide-camiseta-preta.webp" alt="Camiseta estampada personalizada"><img class="hero-slide" src="slide-caneca-eco.webp" alt="Caneca personalizada"><img class="hero-slide" src="slide-caneca-chopp.webp" alt="Caneca de chopp personalizada"></div></div></div></section>
     <section class="products" id="produtos"><div class="wrap"><div class="title"><small>Confira o que fazemos</small><h2>Personalizados para cada ideia</h2></div><div class="grid3"><article class="product"><div class="photo-circle pc-u"><img src="produto-uniforme-orange.jpg" alt="Uniforme polo personalizado" loading="lazy"></div><h3>Uniformes &amp; Camisetas</h3><p>Para empresas, equipes, eventos e marcas.</p><a class="darkbtn wa" href="#">Pedir orçamento</a></article><article class="product"><div class="photo-circle pc-c"><img src="produto-caneca-azulejo-orange.jpg" alt="Caneca e azulejo personalizados" loading="lazy"></div><h3>Canecas &amp; Azulejos</h3><p>Fotos, frases e artes para presentes e decoração.</p><a class="darkbtn wa" href="#">Pedir orçamento</a></article><article class="product"><div class="photo-circle pc-p"><img src="produto-bone-garrafa-orange.jpg" alt="Boné e garrafa personalizados" loading="lazy"></div><h3>Presentes Personalizados</h3><p>Bonés, garrafas, kits e outras ideias feitas do seu jeito.</p><a class="darkbtn wa" href="#">Pedir orçamento</a></article></div></div></section>
